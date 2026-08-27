@@ -1,4 +1,4 @@
-# 📚 Caderno Temático: Fundamentos de IA Generativa e RAG com NotebookLM
+# Caderno Temático: Fundamentos de IA Generativa e RAG com NotebookLM
 
 Repositório desenvolvido para o desafio **"Acelere sua Aprendizagem com IA: Explore o Poder do NotebookLM"** da plataforma [DIO](https://www.dio.me/). 
 
@@ -6,7 +6,7 @@ Este projeto explora o uso de Inteligência Artificial como ferramenta de aprend
 
 ---
 
-## 🎯 1. Contexto e Objetivos
+## 1. Contexto e Objetivos
 
 ### Assunto de Interesse
 O tema escolhido para este caderno temático é **Sistemas baseados em RAG (Retrieval-Augmented Generation) e Otimização de Engenharia de Prompts**. 
@@ -18,7 +18,7 @@ O tema escolhido para este caderno temático é **Sistemas baseados em RAG (Retr
 
 ---
 
-## 📂 2. Curadoria de Fontes
+## 2. Curadoria de Fontes
 
 Para alimentar a base de conhecimento do NotebookLM, foram selecionadas **4 fontes públicas e confiáveis**, cobrindo desde a teoria acadêmica até a aplicação prática:
 
@@ -31,16 +31,16 @@ Para alimentar a base de conhecimento do NotebookLM, foram selecionadas **4 font
 
 ---
 
-## 💡 3. Engenharia de Prompts e "Cicatrizes" (Troubleshooting)
+## 3. Engenharia de Prompts e "Cicatrizes" (Troubleshooting)
 
 Durante a exploração do NotebookLM, vários ciclos de iteração foram testados para refinar as respostas. Abaixo estão documentados os testes, ajustes e aprendizados:
 
-### 🔴 Teste 1: Busca Direta (Prompting Ingênuo)
+### Teste 1: Busca Direta (Prompting Ingênuo)
 - **Prompt Utilizado**: *"O que é RAG e como ele funciona?"*
 - **Resultado Obtido**: Uma resposta correta, porém superficial e genérica, sem referenciar diretamente os detalhes técnicos dos PDFs carregados.
 - **Dificuldade / "Cicatriz"**: O modelo tendeu a usar seu conhecimento prévio mundial em vez de focar estritamente nas especificidades arquiteturais detalhadas nos papers da fonte.
 
-### 🟢 Teste 2: Prompting Estruturado com Delimitadores e Papel (Roleplay)
+### Teste 2: Prompting Estruturado com Delimitadores e Papel (Roleplay)
 - **Prompt Utilizado**: 
   ```text
   Atue como um Arquiteto de Software especialista em IA. 
