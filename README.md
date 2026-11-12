@@ -18,7 +18,18 @@ O tema escolhido para este caderno temático é **Sistemas baseados em RAG (Retr
 
 ---
 
-## 2. Curadoria de Fontes
+## 2. Tecnologias e Conceitos Aplicados
+
+| Camada | Tecnologia / Conceito | Finalidade |
+|---|---|---|
+| Ingestão e Curadoria | Google NotebookLM | Ambiente de consolidação e grounding documental |
+| Modelo Base de Linguagem | Gemini 1.5 Pro | Raciocínio sobre contexto longo e síntese técnica |
+| Recuperação de Informação | RAG (Retrieval-Augmented Generation) | Ancoragem de respostas com base em vetores semânticos |
+| Engenharia de Prompts | Roleplay, Delimitadores e Few-Shot | Redução de alucinações e padronização de saídas |
+
+---
+
+## 3. Curadoria de Fontes
 
 Para alimentar a base de conhecimento do NotebookLM, foram selecionadas **4 fontes públicas e confiáveis**, cobrindo desde a teoria acadêmica até a aplicação prática:
 
@@ -31,14 +42,14 @@ Para alimentar a base de conhecimento do NotebookLM, foram selecionadas **4 font
 
 ---
 
-## 3. Engenharia de Prompts e "Cicatrizes" (Troubleshooting)
+## 4. Engenharia de Prompts e "Cicatrizes" (Troubleshooting)
 
 Durante a exploração do NotebookLM, vários ciclos de iteração foram testados para refinar as respostas. Abaixo estão documentados os testes, ajustes e aprendizados:
 
 ### Teste 1: Busca Direta (Prompting Ingênuo)
 - **Prompt Utilizado**: *"O que é RAG e como ele funciona?"*
 - **Resultado Obtido**: Uma resposta correta, porém superficial e genérica, sem referenciar diretamente os detalhes técnicos dos PDFs carregados.
-- **Dificuldade / "Cicatriz"**: O modelo tendeu a usar seu conhecimento prévio mundial em vez de focar estritamente nas especificidades arquiteturais detalhadas nos papers da fonte.
+- **Dificuldade / "Cicatriz"**: O modelo tendeu a usar seu conhecimento prévio geral em vez de focar estritamente nas especificidades arquiteturais detalhadas nos papers da fonte.
 
 ### Teste 2: Prompting Estruturado com Delimitadores e Papel (Roleplay)
 - **Prompt Utilizado**: 
@@ -47,3 +58,14 @@ Durante a exploração do NotebookLM, vários ciclos de iteração foram testado
   Com base exclusivamente nas fontes fornecidas, elabore uma explicação técnica sobre o fluxo de dados em um sistema RAG. 
   Divida a resposta em três etapas: 1. Ingestão/Chunking, 2. Recuperação (Retrieval) e 3. Geração. 
   Cite o número da fonte ao final de cada afirmação técnica.
+  ```
+- **Resultado Obtido**: Resposta altamente estruturada, com distinção precisa entre o papel do Retriever (busca densa de vetores via similaridade semântica) e do Generator (LLM sintetizando o prompt acrescido de contexto), com referência explícita aos artigos de base.
+- **Aprendizado**: Atribuir persona técnica e exigir divisão estruturada por fases força o modelo a seguir a lógica conceitual dos documentos ancorados.
+
+---
+
+## 5. Decisões Técnicas e Conclusões
+
+- **Ancoragem estrita (Grounding):** A delimitação do escopo para responder estritamente com base nos documentos carregados elimina alucinações conceituais comuns em modelos de linguagem puros.
+- **Citação rastreável:** Exigir numeração ou menção de fonte assegura auditabilidade da informação, um requisito primordial em ambientes corporativos de análise de dados e tomada de decisão.
+- **Aceleração do aprendizado técnico:** O uso de RAG pessoal reduz o tempo de síntese de papers acadêmicos e documentações densas sem perda de profundidade técnica.
